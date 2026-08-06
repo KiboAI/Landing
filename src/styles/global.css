@@ -140,6 +140,7 @@ button,
   border-top: 1px solid var(--color-border);
   border-left: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
+  border-right: 1px solid var(--color-border);
   background: var(--color-white);
 }
 .dynamics-title-row h2 {
@@ -180,6 +181,7 @@ button,
   .dynamics-card { flex-direction: row; }
   .dynamics-left { flex: 0 1 928px; min-width: 0; }
   .dynamics-more { min-height: 0; }
+  .dynamics-title-row { border-right: none; }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
