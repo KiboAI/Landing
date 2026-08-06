@@ -1,0 +1,85 @@
+---
+import Container from "@/components/container.astro";
+import Link from "@/components/ui/link.astro";
+import Dropdown from "./dropdown.astro";
+import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+
+const menuitems = [
+  {
+    title: "产品",
+    children: [
+      { title: "网页版", path: "/" },
+      { title: "App", path: "/" },
+    ],
+  },
+  {
+    title: "文档",
+    path: "/",
+  },
+  {
+    title: "动态",
+    path: "/",
+  },
+  {
+    title: "联系",
+    path: "mailto:support@kibotalk.app",
+  },
+];
+---
+
+<Container>
+  <header class="navbar-header flex flex-col lg:flex-row lg:items-center lg:justify-between py-3">
+    <Astronav>
+      <div class="nav-main flex flex-col w-full lg:w-auto lg:flex-row lg:items-center lg:gap-5">
+      <div class="nav-logo-row flex w-full lg:w-auto items-center justify-between">
+        <a href="/" class="flex items-center" aria-label="KiboTalk 首页">
+          <img src="/assets/logo/logo-black.svg" alt="KiboTalk" class="h-4 w-auto" />
+        </a>
+        <div class="block lg:hidden">
+          <MenuIcon class="w-4 h-4 text-ink" />
+        </div>
+      </div>
+      <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
+        <ul class="nav-center flex flex-col lg:flex-row lg:gap-3">
+          {
+            menuitems.map((item, index) => (
+              <>
+                {item.children && (
+                  <Dropdown
+                    title={item.title}
+                    children={item.children}
+                    lastItem={index === menuitems.length - 1}
+                  />
+                )}
+
+                {!item.children && (
+                  <li>
+                    <a
+
+                      href={item.path ?? "/"} class={`flex lg:px-3 py-2 items-center text-primary font-medium text-sm hover:text-ink ${!item.path || item.path === "/" ? "noop" : ""}`}>
+                      <span> {item.title}</span>
+                      {item.badge && (
+                        <span class="ml-1 px-2 py-0.5 text-[10px] animate-pulse font-semibold text-white bg-indigo-600 rounded-full">
+                          New
+                        </span>
+                      )}
+                    </a>
+                  </li>
+                )}
+              </>
+            ))
+          }
+        </ul>
+        <div class="lg:hidden flex items-center mt-3 gap-3.5">
+          <Link href="/" style="outline" size="md" class="py-1! h-8! text-sm! noop flex items-center justify-center w-auto">登记内测</Link>
+          <Link href="https://github.com/KiboAI" size="md" target="_blank" rel="noopener" class="py-1! h-8! text-sm! flex items-center justify-center w-auto">GitHub</Link>
+        </div>
+      </MenuItems>
+      </div>
+    </Astronav>
+    <div class="nav-buttons hidden lg:flex items-center gap-3.5">
+      <Link href="/" style="outline" size="md" class="py-1! h-8! text-sm! noop flex items-center justify-center">登记内测</Link>
+      <Link href="https://github.com/KiboAI" size="md" target="_blank" rel="noopener" class="py-1! h-8! text-sm! flex items-center justify-center">GitHub</Link>
+    </div>
+  </header>
+</Container>

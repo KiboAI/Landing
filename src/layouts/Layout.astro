@@ -1,0 +1,63 @@
+---
+import { SEO } from "astro-seo";
+import Footer from "@/components/footer.astro";
+import Navbar from "@/components/navbar/navbar.astro";
+import "../styles/global.css";
+import "@fontsource/ibm-plex-sans/500.css";
+
+export interface Props {
+  title: string;
+}
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+
+const resolvedImageWithDomain = new URL(
+  "/opengraph.jpg",
+  Astro.site
+).toString();
+
+const { title } = Astro.props;
+
+const makeTitle = title
+  ? title + " | " + "KiboTalk"
+  : "KiboTalk — 你的 AI 语言交流搭子";
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+
+    <SEO
+      title={makeTitle}
+      description="KiboTalk 是一款 AI 实时语言交流助手：听懂正在发生的对话，马上知道下一句怎么回，看得懂也说得出口。让每次交流都变成进步。"
+      canonical={canonicalURL}
+      openGraph={{
+        basic: {
+          url: canonicalURL,
+          type: "website",
+          title: "KiboTalk — 你的 AI 语言交流搭子",
+          image: resolvedImageWithDomain,
+        },
+        image: {
+          alt: "KiboTalk 首页",
+        },
+      }}
+    />
+  </head>
+  <body>
+<script is:inline>
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest ? e.target.closest("a.noop") : null;
+    if (a) e.preventDefault();
+  });
+</script>
+    <Navbar />
+    <slot />
+    <Footer />
+  </body>
+</html>
