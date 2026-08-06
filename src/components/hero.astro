@@ -1,0 +1,85 @@
+---
+import Link from "@/components/ui/link.astro";
+---
+
+<main class="pt-10 pb-4 md:pb-24">
+  <div class="flex flex-col lg:flex-row items-start justify-between gap-8">
+
+    <div class="w-full min-w-0 lg:flex-1">
+      <h1
+        class="text-[42px] lg:text-6xl xl:text-7xl font-bold text-ink leading-none"
+        style="font-family: 'A-OTF Shin Go Pro', 'PingFang SC', 'Hiragino Sans GB', sans-serif">
+        KiboTalk
+      </h1>
+      <p class="text-[42px] lg:text-6xl xl:text-7xl text-primary font-medium leading-none">
+        你的 AI 语言交流搭子
+      </p>
+    </div>
+
+    <div class="flex flex-col items-start w-full min-w-0 lg:w-auto">
+      <p class="text-sm text-primary">
+        我们正在进行后续版本的开发<br />
+        加入我们的产品内测群，交流、体验我们的最新版本
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3.5 mt-3.5 w-full sm:w-auto">
+        <Link size="xl" style="green" class="w-full sm:w-auto flex gap-1 items-center justify-center noop" data-qr-open="true">
+          微信产品内测群
+        </Link>
+        <Link
+          size="xl"
+          style="outline"
+          href="https://lcnrgdqswjym.feishu.cn/share/base/shrcnlQJInfyIaLmifMUTRA5wMg"
+          target="_blank"
+          rel="noopener"
+          class="w-full sm:w-auto flex gap-1 items-center justify-center">
+          填写调研问卷
+        </Link>
+      </div>
+      <a href="/" class="inline-flex items-center gap-1 text-sm text-primary mt-3.5 noop">
+        试用网页版（暂未开放）
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</main>
+
+<div class="qr-modal" id="qrModal" aria-hidden="true">
+  <div class="qr-modal-backdrop" data-qr-close></div>
+  <div class="qr-modal-box">
+    <img src="/assets/images/qr-wechat.png" alt="微信产品内测群二维码" width="200" height="200" />
+    <p>扫一扫，加入微信内测群</p>
+    <button type="button" class="qr-modal-close" data-qr-close>关闭</button>
+  </div>
+</div>
+
+<script>
+  const qrModal = document.getElementById("qrModal");
+  if (qrModal) {
+    const lockScroll = () => {
+      document.body.style.overflow = "hidden";
+    };
+    const unlockScroll = () => {
+      document.body.style.overflow = "";
+    };
+    const closeModal = () => {
+      qrModal.classList.remove("open");
+      unlockScroll();
+    };
+    document.querySelectorAll("[data-qr-open]").forEach((el) => {
+      el.addEventListener("click", (e) => {
+        e.preventDefault();
+        qrModal.classList.add("open");
+        lockScroll();
+      });
+    });
+    document.querySelectorAll("[data-qr-close]").forEach((el) => {
+      el.addEventListener("click", closeModal);
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeModal();
+    });
+  }
+</script>
+

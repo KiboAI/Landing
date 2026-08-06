@@ -1,0 +1,30 @@
+---
+
+const features = [
+  { num: "01", title: "听懂正在发生的对话", desc: "AI 实时识别并理解现场语音，快速显示对话内容。" },
+  { num: "02", title: "马上知道下一句怎么回", desc: "系统结合当前对话场景和你的表达目标，提供三种符合语境的回复方向。" },
+  { num: "03", title: "看得懂，也能说得出口", desc: "每条建议都包含目标语言、中文释义和必要的读法提示，适应你的语言水平。" },
+  { num: "04", title: "卡了？帮你把话接下去", desc: "说到一半想不起词时，AI 会补全一句完整、自然的表达。AI 只提供建议，最终仍由你亲口回答。" },
+  { num: "05", title: "让每次交流都变成进步", desc: "对话结束后，AI 会总结交流内容，帮助你发现表达问题。真实生活中的每次开口，都能成为下一次更自信的开始。" },
+];
+---
+
+<section class="features py-24">
+  <div class="features-grid">
+      <div class="features-heading-group">
+        <h2 class="features-heading">
+          <span class="fh-brand">KiboTalk</span>
+          <span class="fh-phrase">是怎样工作的？</span>
+        </h2>
+      </div>
+      <div class="features-list">
+        {features.map((f) => (
+          <div class="feature">
+            <span class="f-num">{f.num}</span>
+            <h3>{f.title}</h3>
+            <p>{f.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+</section>

@@ -1,0 +1,131 @@
+---
+const rows = [
+  [
+    "🌟 你好呀，初次见面！ Hi there, nice to meet you! こんにちは、はじめまして！",
+    "🎵 最近在听什么歌呢？ What music are you into lately? 最近どんな音楽を聴いてますか？",
+    "😊 今天过得怎么样？ How was your day today? 今日はどんな一日でしたか？",
+    "💼 来模拟一次面试吧！ Let's do a mock interview! 模擬面接をやってみよう！",
+    "🗣️ 我想练习自我介绍。 I want to practice self-introductions. 自己紹介の練習をしたいです。",
+    "🍜 晚餐一般吃什么呀？ What do you usually have for dinner? 夕食はいつも何を食べますか？",
+    "☕ 平时喜欢喝什么呀？ What do you usually like to drink? 普段は何をよく飲みますか？",
+    "📚 一起读篇文章练练吧~ Let's read an article together. 一緒に記事を読んで練習しよう。",
+    "✈️ 聊聊旅行中的趣事吧~ Let's share fun travel stories. 旅行の面白い話をしよう。",
+    "🏠 现在住的地方怎么样呀？ How's where you live now? 今住んでいる場所はどうですか？",
+  ],
+  [
+    "☕ 平时喜欢喝什么呀？ What do you usually like to drink? 普段は何をよく飲みますか？",
+    "📚 一起读篇文章练练吧~ Let's read an article together. 一緒に記事を読んで練習しよう。",
+    "🌟 你好呀，初次见面！ Hi there, nice to meet you! こんにちは、はじめまして！",
+    "🎵 最近在听什么歌呢？ What music are you into lately? 最近どんな音楽を聴いてますか？",
+    "🏠 现在住的地方怎么样呀？ How's where you live now? 今住んでいる場所はどうですか？",
+    "🗣️ 我想练习自我介绍。 I want to practice self-introductions. 自己紹介の練習をしたいです。",
+    "💼 来模拟一次面试吧！ Let's do a mock interview! 模擬面接をやってみよう！",
+    "😊 今天过得怎么样？ How was your day today? 今日はどんな一日でしたか？",
+    "🍜 晚餐一般吃什么呀？ What do you usually have for dinner? 夕食はいつも何を食べますか？",
+    "✈️ 聊聊旅行中的趣事吧~ Let's share fun travel stories. 旅行の面白い話をしよう。",
+  ],
+  [
+    "😊 今天过得怎么样？ How was your day today? 今日はどんな一日でしたか？",
+    "🍜 晚餐一般吃什么呀？ What do you usually have for dinner? 夕食はいつも何を食べますか？",
+    "✈️ 聊聊旅行中的趣事吧~ Let's share fun travel stories. 旅行の面白い話をしよう。",
+    "🌟 你好呀，初次见面！ Hi there, nice to meet you! こんにちは、はじめまして！",
+    "🏠 现在住的地方怎么样呀？ How's where you live now? 今住んでいる場所はどうですか？",
+    "🎵 最近在听什么歌呢？ What music are you into lately? 最近どんな音楽を聴いてますか？",
+    "🗣️ 我想练习自我介绍。 I want to practice self-introductions. 自己紹介の練習をしたいです。",
+    "📚 一起读篇文章练练吧~ Let's read an article together. 一緒に記事を読んで練習しよう。",
+    "💼 来模拟一次面试吧！ Let's do a mock interview! 模擬面接をやってみよう！",
+    "☕ 平时喜欢喝什么呀？ What do you usually like to drink? 普段は何をよく飲みますか？",
+  ],
+  [
+    "💼 来模拟一次面试吧！ Let's do a mock interview! 模擬面接をやってみよう！",
+    "🗣️ 我想练习自我介绍。 I want to practice self-introductions. 自己紹介の練習をしたいです。",
+    "🏠 现在住的地方怎么样呀？ How's where you live now? 今住んでいる場所はどうですか？",
+    "✈️ 聊聊旅行中的趣事吧~ Let's share fun travel stories. 旅行の面白い話をしよう。",
+    "📚 一起读篇文章练练吧~ Let's read an article together. 一緒に記事を読んで練習しよう。",
+    "🌟 你好呀，初次见面！ Hi there, nice to meet you! こんにちは、はじめまして！",
+    "🎵 最近在听什么歌呢？ What music are you into lately? 最近どんな音楽を聴いてますか？",
+    "☕ 平时喜欢喝什么呀？ What do you usually like to drink? 普段は何をよく飲みますか？",
+    "🍜 晚餐一般吃什么呀？ What do you usually have for dinner? 夕食はいつも何を食べますか？",
+    "😊 今天过得怎么样？ How was your day today? 今日はどんな一日でしたか？",
+  ],
+  [
+    "🗣️ 我想练习自我介绍。 I want to practice self-introductions. 自己紹介の練習をしたいです。",
+    "🏠 现在住的地方怎么样呀？ How's where you live now? 今住んでいる場所はどうですか？",
+    "🎵 最近在听什么歌呢？ What music are you into lately? 最近どんな音楽を聴いてますか？",
+    "😊 今天过得怎么样？ How was your day today? 今日はどんな一日でしたか？",
+    "📚 一起读篇文章练练吧~ Let's read an article together. 一緒に記事を読んで練習しよう。",
+    "✈️ 聊聊旅行中的趣事吧~ Let's share fun travel stories. 旅行の面白い話をしよう。",
+    "🌟 你好呀，初次见面！ Hi there, nice to meet you! こんにちは、はじめまして！",
+    "💼 来模拟一次面试吧！ Let's do a mock interview! 模擬面接をやってみよう！",
+    "☕ 平时喜欢喝什么呀？ What do you usually like to drink? 普段は何をよく飲みますか？",
+    "🍜 晚餐一般吃什么呀？ What do you usually have for dinner? 夕食はいつも何を食べますか？",
+  ],
+];
+const splitPhrase = (t) => {
+  const m = t.match(/^(\p{Extended_Pictographic}\uFE0F?)/u);
+  return m ? { emoji: m[1], rest: t.slice(m[1].length) } : { emoji: "", rest: t };
+};
+const marqueeRows = rows.map((row) => [...row, ...row].map(splitPhrase));
+const OFFSETS = [0, -400, -800, -1200, -1600];
+---
+
+<div class="marquee" aria-hidden="true">
+  {marqueeRows.map((row, i) => (
+    <div class="marquee-row" style={`margin-left: ${OFFSETS[i]}px`}>
+      {row.map((p) => (
+        <span class="phrase">
+          {p.emoji !== "" && <span class="phrase-emoji">{p.emoji}</span>}
+          <span class="phrase-text">{p.rest}</span>
+        </span>
+      ))}
+    </div>
+  ))}
+</div>
+
+<style>
+  .marquee {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(12px, 1.5vw, 29px);
+    overflow: hidden;
+  }
+  .marquee-row {
+    display: flex;
+    width: max-content;
+    white-space: nowrap;
+    font-size: clamp(28px, 3.8vw, 60px);
+    font-weight: 500;
+    line-height: 1.5;
+    color: #000000;
+    animation: marquee linear infinite;
+    will-change: transform;
+  }
+  .marquee-row .phrase { margin-right: 4px; }
+  .marquee-row .phrase-emoji {
+    -webkit-text-fill-color: initial;
+    color: initial;
+  }
+  .marquee-row .phrase-text {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.25));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+</style>
+
+<script>
+  const MARQUEE_SPEEDS = [45, 51.4, 45, 51.4, 45]; // 0.75 倍速
+  function setMarqueeSpeed() {
+    document.querySelectorAll(".marquee-row").forEach((row, i) => {
+      const width = row.scrollWidth;
+      row.style.animationDuration = width / 2 / MARQUEE_SPEEDS[i] + "s";
+    });
+  }
+  setMarqueeSpeed();
+  window.addEventListener("resize", setMarqueeSpeed);
+</script>
